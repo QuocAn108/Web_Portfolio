@@ -35,13 +35,13 @@ const sr = ScrollReveal({
   reset: true,
 });
 sr.reveal(".featured-text-card", {});
-sr.reveal(".featured-name", { delay: 100 });
-sr.reveal(".featured-text-info", { delay: 200 });
-sr.reveal(".featured-text-btn", { delay: 200 });
-sr.reveal(".social_icons", { delay: 200 });
-sr.reveal(".featured-image", { delay: 300 });
+sr.reveal(".featured-name", { delay: 50 });
+sr.reveal(".featured-text-info", { delay: 100 });
+sr.reveal(".featured-text-btn", { delay: 100 });
+sr.reveal(".social_icons", { delay: 100 });
+sr.reveal(".featured-image", { delay: 150 });
 
-sr.reveal(".project-box", { interval: 200 });
+sr.reveal(".project-box", { interval: 100 });
 sr.reveal(".top-header", {});
 
 const srLeft = ScrollReveal({
@@ -51,8 +51,8 @@ const srLeft = ScrollReveal({
   reset: true,
 });
 
-srLeft.reveal(".about-info", { delay: 100 });
-srLeft.reveal(".contact-info", { delay: 100 });
+srLeft.reveal(".about-info", { delay: 50 });
+srLeft.reveal(".contact-info", { delay: 50 });
 const srRight = ScrollReveal({
   origin: "right",
   distance: "80px",
@@ -60,8 +60,8 @@ const srRight = ScrollReveal({
   reset: true,
 });
 
-srRight.reveal(".skills-box", { delay: 100 });
-srRight.reveal(".form-control", { delay: 100 });
+srRight.reveal(".skills-box", { delay: 50 });
+srRight.reveal(".form-control", { delay: 50 });
 
 const sections = document.querySelectorAll("section[id]");
 function scrollActive() {
@@ -81,6 +81,39 @@ function scrollActive() {
     }
   });
 }
+const scrollButton = document.getElementById("scrollButton");
+const scrollIcon = scrollButton.querySelector("i");
+
+window.onscroll = function () {
+  if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
+    scrollButton.classList.add("show");
+  } else {
+    scrollButton.classList.remove("show");
+  }
+
+  if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 50) {
+    scrollIcon.className = "uil uil-arrow-up";
+  } else {
+    scrollIcon.className = "uil uil-arrow-down";
+  }
+};
+
+scrollButton.addEventListener("click", function () {
+  if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 50) {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  } else {
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: "smooth",
+    });
+  }
+});
+document.querySelector(".blue-btn").addEventListener("click", function () {
+  document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+});
 window.addEventListener("scroll", scrollActive);
 let darkmode = localStorage.getItem("darkmode");
 const themeSwitch = document.getElementById("theme-switch");

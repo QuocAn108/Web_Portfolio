@@ -47,18 +47,40 @@ html {
 .btn {
   font-weight: 500;
   padding: 12px 20px;
-  background: #efefef;
+  background: transparent;
   border: none;
   border-radius: 10px;
   cursor: pointer;
   transition: 0.4s;
+  color: var(--text-color-second);
+}
+.scroll-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #2968c8;
+  border: none;
+  cursor: pointer;
+  display: none;
+  color: white;
+  font-size: 20px;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.scroll-button:hover {
+  background: #1a4c94;
+  transform: scale(1.1);
+}
+
+.scroll-button.show {
+  display: block;
 }
 .btn > i {
   margin-left: 10px;
-}
-.btn:hover {
-  background: var(--second-color);
-  color: var(--color-white);
 }
 i {
   font-size: 16px;
