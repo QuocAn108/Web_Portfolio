@@ -71,7 +71,7 @@ Generated\ Files/
 *.VisualState.xml
 TestResult.xml
 nunit-*.xml
-
+config.json 
 # Build Results of an ATL Project
 [Dd]ebugPS/
 [Rr]eleasePS/
