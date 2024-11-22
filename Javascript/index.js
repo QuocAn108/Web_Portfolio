@@ -111,8 +111,10 @@ scrollButton.addEventListener("click", function () {
     });
   }
 });
-document.querySelector(".blue-btn").addEventListener("click", function () {
-  document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+document.querySelectorAll(".blue-btn").forEach((button) => {
+  button.addEventListener("click", function () {
+    document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+  });
 });
 window.addEventListener("scroll", scrollActive);
 let darkmode = localStorage.getItem("darkmode");
