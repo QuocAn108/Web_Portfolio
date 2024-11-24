@@ -35,13 +35,13 @@ const sr = ScrollReveal({
   reset: true,
 });
 sr.reveal(".featured-text-card", {});
-sr.reveal(".featured-name", { delay: 50 });
-sr.reveal(".featured-text-info", { delay: 100 });
-sr.reveal(".featured-text-btn", { delay: 100 });
-sr.reveal(".social_icons", { delay: 100 });
-sr.reveal(".featured-image", { delay: 150 });
+sr.reveal(".featured-name", { delay: 30 });
+sr.reveal(".featured-text-info", { delay: 70 });
+sr.reveal(".featured-text-btn", { delay: 70 });
+sr.reveal(".social_icons", { delay: 70 });
+sr.reveal(".featured-image", { delay: 120 });
 
-sr.reveal(".project-box", { interval: 100 });
+sr.reveal(".project-box", { interval: 70 });
 sr.reveal(".top-header", {});
 
 const srLeft = ScrollReveal({
@@ -51,8 +51,8 @@ const srLeft = ScrollReveal({
   reset: true,
 });
 
-srLeft.reveal(".about-info", { delay: 50 });
-srLeft.reveal(".contact-info", { delay: 50 });
+srLeft.reveal(".about-info", { delay: 35 });
+srLeft.reveal(".contact-info", { delay: 35 });
 const srRight = ScrollReveal({
   origin: "right",
   distance: "80px",
@@ -60,15 +60,15 @@ const srRight = ScrollReveal({
   reset: true,
 });
 
-srRight.reveal(".skills-box", { delay: 50 });
-srRight.reveal(".form-control", { delay: 50 });
+srRight.reveal(".skills-box", { delay: 35 });
+srRight.reveal(".form-control", { delay: 35 });
 
 const sections = document.querySelectorAll("section[id]");
 function scrollActive() {
   const scrollY = window.scrollY;
   sections.forEach((current) => {
     const sectionHeight = current.offsetHeight,
-      sectionTop = current.offsetTop - 50,
+      sectionTop = current.offsetTop - 35,
       sectionId = current.getAttribute("id");
     if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
       document
@@ -91,7 +91,7 @@ window.onscroll = function () {
     scrollButton.classList.remove("show");
   }
 
-  if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 50) {
+  if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 35) {
     scrollIcon.className = "uil uil-arrow-up";
   } else {
     scrollIcon.className = "uil uil-arrow-down";
@@ -99,7 +99,7 @@ window.onscroll = function () {
 };
 
 scrollButton.addEventListener("click", function () {
-  if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 50) {
+  if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 35) {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
